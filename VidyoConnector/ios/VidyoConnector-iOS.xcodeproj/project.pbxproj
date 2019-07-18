@@ -26,12 +26,12 @@
 		1DD5E7BB1DB18770006D367E /* cameraSwitch.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DD5E7BA1DB18770006D367E /* cameraSwitch.png */; };
 		1DFDAFDB1BA9EE0300AC5F19 /* VidyoConnectorAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DFDAFDA1BA9EE0300AC5F19 /* VidyoConnectorAppDelegate.m */; };
 		1DFDB0151BAA18FA00AC5F19 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DFDB0141BAA18FA00AC5F19 /* UIKit.framework */; };
+		271A9BBA22E0B57200261A41 /* VidyoClientIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271A9BB922E0B57200261A41 /* VidyoClientIOS.framework */; };
 		F9CA1EB1201AA10E00A469A3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9CA1EB0201AA10E00A469A3 /* AVFoundation.framework */; };
 		F9CA1EB3201AA1F100A469A3 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9CA1EB2201AA1F100A469A3 /* AudioToolbox.framework */; };
 		F9CA1EB9201AA27C00A469A3 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9CA1EB8201AA27B00A469A3 /* CoreMedia.framework */; };
 		F9CA1EBF201AA4AB00A469A3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9CA1EBE201AA4AB00A469A3 /* SystemConfiguration.framework */; };
 		F9CA1EC8201AA73400A469A3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9CA1EC7201AA73400A469A3 /* CoreLocation.framework */; };
-		F9F42E2A1E26DA6C002EAFDE /* VidyoClientIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F42E291E26DA6C002EAFDE /* VidyoClientIOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,12 +63,12 @@
 		1DFDB0111BAA0A0000AC5F19 /* VidyoConnector.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = VidyoConnector.entitlements; sourceTree = "<group>"; };
 		1DFDB0121BAA0CE100AC5F19 /* VidyoConnector_iOS.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VidyoConnector_iOS.pch; sourceTree = "<group>"; };
 		1DFDB0141BAA18FA00AC5F19 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		271A9BB922E0B57200261A41 /* VidyoClientIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VidyoClientIOS.framework; path = ../../../../lib/ios/VidyoClientIOS.framework; sourceTree = "<group>"; };
 		F9CA1EB0201AA10E00A469A3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		F9CA1EB2201AA1F100A469A3 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		F9CA1EB8201AA27B00A469A3 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		F9CA1EBE201AA4AB00A469A3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F9CA1EC7201AA73400A469A3 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		F9F42E291E26DA6C002EAFDE /* VidyoClientIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VidyoClientIOS.framework; path = ../../../lib/ios/VidyoClientIOS.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,13 +76,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				271A9BBA22E0B57200261A41 /* VidyoClientIOS.framework in Frameworks */,
 				F9CA1EB1201AA10E00A469A3 /* AVFoundation.framework in Frameworks */,
 				F9CA1EB3201AA1F100A469A3 /* AudioToolbox.framework in Frameworks */,
 				F9CA1EC8201AA73400A469A3 /* CoreLocation.framework in Frameworks */,
 				F9CA1EB9201AA27C00A469A3 /* CoreMedia.framework in Frameworks */,
 				F9CA1EBF201AA4AB00A469A3 /* SystemConfiguration.framework in Frameworks */,
 				1DFDB0151BAA18FA00AC5F19 /* UIKit.framework in Frameworks */,
-				F9F42E2A1E26DA6C002EAFDE /* VidyoClientIOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,13 +158,13 @@
 		1DFDAFE81BA9F13F00AC5F19 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				271A9BB922E0B57200261A41 /* VidyoClientIOS.framework */,
 				F9CA1EB0201AA10E00A469A3 /* AVFoundation.framework */,
 				F9CA1EB2201AA1F100A469A3 /* AudioToolbox.framework */,
 				F9CA1EC7201AA73400A469A3 /* CoreLocation.framework */,
 				F9CA1EB8201AA27B00A469A3 /* CoreMedia.framework */,
 				F9CA1EBE201AA4AB00A469A3 /* SystemConfiguration.framework */,
 				1DFDB0141BAA18FA00AC5F19 /* UIKit.framework */,
-				F9F42E291E26DA6C002EAFDE /* VidyoClientIOS.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -313,7 +313,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../../../lib/ios\"";
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../../../../lib/ios\"";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -329,9 +329,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../../lib/ios/VidyoClientIOS.framework/Headers\"";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../../../lib/ios/VidyoClientIOS.framework/Headers\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../../lib/ios\"";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)../../../../lib/ios\"";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
@@ -372,7 +372,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../../../lib/ios\"";
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../../../../lib/ios\"";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -381,9 +381,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../../lib/ios/VidyoClientIOS.framework/Headers\"";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../../../lib/ios/VidyoClientIOS.framework/Headers\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../../lib/ios\"";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)../../../../lib/ios\"";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
