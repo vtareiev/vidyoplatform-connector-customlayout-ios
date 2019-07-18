@@ -200,7 +200,7 @@
 				TargetAttributes = {
 					1D81E89C1B96413200F9EB06 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = FMA43525ZW;
+						DevelopmentTeam = 6X29P73TBC;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -331,7 +331,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../lib/ios/VidyoClientIOS.framework/Headers\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)../../lib/ios\"";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../lib/ios\"";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
@@ -383,7 +383,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../lib/ios/VidyoClientIOS.framework/Headers\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)../../lib/ios\"";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/../../lib/ios\"";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
@@ -405,7 +405,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_ENTITLEMENTS = VidyoConnector/VidyoConnector.entitlements;
 				CODE_SIGN_IDENTITY = "$(inherited)";
-				DEVELOPMENT_TEAM = FMA43525ZW;
+				DEVELOPMENT_TEAM = 6X29P73TBC;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -438,7 +438,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_ENTITLEMENTS = VidyoConnector/VidyoConnector.entitlements;
 				CODE_SIGN_IDENTITY = "$(inherited)";
-				DEVELOPMENT_TEAM = FMA43525ZW;
+				DEVELOPMENT_TEAM = 6X29P73TBC;
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
