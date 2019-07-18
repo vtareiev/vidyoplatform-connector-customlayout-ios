@@ -1,7 +1,7 @@
 # vidyoplatform-connector-ios
 
-## Acquire VidyoClient-iOS SDK
-Download the latest Vidyo.io iOS SDK package [here](https://static.vidyo.io/latest/package/VidyoClient-iOSSDK.zip) and unzip it.
+## Acquire VidyoClient iOS SDK
+Download the latest VidyoClient iOS SDK package [here](https://static.vidyo.io/latest/package/VidyoClient-iOSSDK.zip) and unzip it.
 
 ## Clone Repository
 Navigate to the *VidyoClient-iOSSDK/samples/* directory and clone the repository at that location:<br/>
