@@ -313,7 +313,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../../../../lib/ios\"";
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../../lib/ios\"";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -329,9 +329,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../../../lib/ios/VidyoClientIOS.framework/Headers\"";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../lib/ios/VidyoClientIOS.framework/Headers\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)../../../../lib/ios\"";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)../../lib/ios\"";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
@@ -372,7 +372,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../../../../lib/ios\"";
+				FRAMEWORK_SEARCH_PATHS = "\"$(SRCROOT)/../../lib/ios\"";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -381,9 +381,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../../../lib/ios/VidyoClientIOS.framework/Headers\"";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/../../lib/ios/VidyoClientIOS.framework/Headers\"";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)../../../../lib/ios\"";
+				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)../../lib/ios\"";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
