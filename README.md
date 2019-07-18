@@ -1,4 +1,5 @@
-# vidyoplatform-connector-ios
+## Overview
+**vidyoplatform-connector-ios** is a [VidyoPlatform](https://vidyo.github.io/vidyoplatform.github.io) reference application highlighting how to integrate video chat into a native ios app.
 
 ## Acquire VidyoClient iOS SDK
 Download the latest VidyoClient iOS SDK package [here](https://static.vidyo.io/latest/package/VidyoClient-iOSSDK.zip) and unzip it.
