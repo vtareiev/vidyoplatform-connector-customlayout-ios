@@ -88,7 +88,7 @@ enum VidyoConnectorState {
     vc = [[VCConnector alloc] init:(void*)&videoView
                             ViewStyle:VCConnectorViewStyleDefault
                             RemoteParticipants:7
-                            LogFileFilter:"info@VidyoClient info@VidyoConnector warning"
+                            LogFileFilter:"warning info@VidyoClient info@LmiPortalSession info@LmiPortalMembership info@LmiResourceManagerUpdates info@LmiPace info@LmiIce"
                             LogFileName:""
                             UserData:0];
     
@@ -110,7 +110,7 @@ enum VidyoConnectorState {
         }
         // Register for log events; the filter argument specifies the log level that
         // is printed to console as well as what is called back in onLog.
-        if ( ![vc registerLogEventListener:self Filter:"info@VidyoClient info@VidyoConnector warning"] ) {
+        if ( ![vc registerLogEventListener:self Filter:"warning info@VidyoClient info@LmiPortalSession info@LmiPortalMembership info@LmiResourceManagerUpdates info@LmiPace info@LmiIce"] ) {
             [logger Log:@"LogEventListener registration failed."];
         }
         // Apply the app settings
