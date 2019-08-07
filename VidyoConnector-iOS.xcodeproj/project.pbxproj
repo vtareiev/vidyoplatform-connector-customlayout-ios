@@ -200,7 +200,7 @@
 				TargetAttributes = {
 					1D81E89C1B96413200F9EB06 = {
 						CreatedOnToolsVersion = 6.4;
-						DevelopmentTeam = 6X29P73TBC;
+						DevelopmentTeam = 75SS44RTG9;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -405,7 +405,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_ENTITLEMENTS = VidyoConnector/VidyoConnector.entitlements;
 				CODE_SIGN_IDENTITY = "$(inherited)";
-				DEVELOPMENT_TEAM = 6X29P73TBC;
+				DEVELOPMENT_TEAM = 75SS44RTG9;
 				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -418,7 +418,7 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MACH_O_TYPE = mh_execute;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vidyo.VidyoCloudConnector;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vidyo.VidyoCloudConnector.vova;
 				PRODUCT_NAME = "VidyoConnector-iOS";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -438,7 +438,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_ENTITLEMENTS = VidyoConnector/VidyoConnector.entitlements;
 				CODE_SIGN_IDENTITY = "$(inherited)";
-				DEVELOPMENT_TEAM = 6X29P73TBC;
+				DEVELOPMENT_TEAM = 75SS44RTG9;
 				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
@@ -452,7 +452,7 @@
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MACH_O_TYPE = mh_execute;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vidyo.VidyoCloudConnector;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vidyo.VidyoCloudConnector.vova;
 				PRODUCT_NAME = "VidyoConnector-iOS";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = NO;

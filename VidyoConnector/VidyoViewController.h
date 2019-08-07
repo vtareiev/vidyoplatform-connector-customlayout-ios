@@ -24,7 +24,8 @@
 #import <UIKit/UIKit.h>
 #import <Lmi/VidyoClient/VidyoConnector_Objc.h>
 
-@interface VidyoViewController : UIViewController <UITextFieldDelegate, VCConnectorIConnect, VCConnectorIRegisterLocalCameraEventListener, VCConnectorIRegisterLocalMicrophoneEventListener, VCConnectorIRegisterLocalSpeakerEventListener, VCConnectorIRegisterLogEventListener>
+@interface VidyoViewController : UIViewController <UITextFieldDelegate, VCConnectorIConnect, VCConnectorIRegisterLocalCameraEventListener, VCConnectorIRegisterLocalMicrophoneEventListener, VCConnectorIRegisterLocalSpeakerEventListener, VCConnectorIRegisterLogEventListener,
+	VCConnectorIRegisterParticipantEventListener, VCConnectorIRegisterRemoteCameraEventListener>
 
 @property (weak, nonatomic) IBOutlet UITextField *portal;
 @property (weak, nonatomic) IBOutlet UITextField *displayName;
@@ -38,7 +39,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *cameraPrivacyButton;
 
 @property (weak, nonatomic) IBOutlet UIView  *controlsView;
-@property (weak, nonatomic) IBOutlet UIView  *videoView;
+@property (weak, nonatomic) IBOutlet UIView  *videoSelfView;
+@property (weak, nonatomic) IBOutlet UIView  *videoRemoteView;
 @property (weak, nonatomic) IBOutlet UIView  *toolbarView;
 @property (weak, nonatomic) IBOutlet UILabel *bottomControlSeparator;
 @property (weak, nonatomic) IBOutlet UILabel *clientVersion;

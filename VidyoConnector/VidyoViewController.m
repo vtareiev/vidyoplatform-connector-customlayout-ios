@@ -45,15 +45,18 @@ enum VidyoConnectorState {
     UIImage       *callEndImage;
     BOOL          devicesSelected;
     CGFloat       keyboardOffset;
+	NSMutableDictionary *remoteParties;
+	VCRemoteCamera *currentRemoteCam;
 }
 @end
 
 @implementation VidyoViewController
 
 @synthesize toggleConnectButton, cameraPrivacyButton, microphonePrivacyButton;
-@synthesize videoView, controlsView, toolbarView;
+@synthesize videoSelfView, videoRemoteView, controlsView, toolbarView;
 @synthesize portal, roomKey, roomPin, displayName;
 @synthesize connectionSpinner, toolbarStatusText, bottomControlSeparator, clientVersion;
+
 
 #pragma mark - View Lifecycle
 
@@ -65,6 +68,7 @@ enum VidyoConnectorState {
     // Initialize the logger and app settings
     logger = [[Logger alloc] init];
     appSettings = [[AppSettings alloc] init];
+	remoteParties = [[NSMutableDictionary alloc] init];
     
     // Initialize the member variables
     vidyoConnectorState = VidyoConnectorStateDisconnected;
@@ -85,7 +89,7 @@ enum VidyoConnectorState {
     [VCConnectorPkg vcInitialize];
 
     // Construct the VidyoConnector
-    vc = [[VCConnector alloc] init:(void*)&videoView
+    vc = [[VCConnector alloc] init:(void*)nil
                             ViewStyle:VCConnectorViewStyleDefault
                             RemoteParticipants:7
                             LogFileFilter:"warning info@VidyoClient info@LmiPortalSession info@LmiPortalMembership info@LmiResourceManagerUpdates info@LmiPace info@LmiIce"
@@ -108,6 +112,14 @@ enum VidyoConnectorState {
         if (![vc registerLocalSpeakerEventListener:self]) {
             [logger Log:@"registerLocalSpeakerEventListener failed"];
         }
+		// Register for remote camera events
+		if (![vc registerRemoteCameraEventListener:self]) {
+			[logger Log:@"registerRemoteCameraEventListener failed"];
+		}
+		// Regoister for participants events
+		if (![vc registerParticipantEventListener:self]) {
+			[logger Log:@"registerParticipantEventListener"];
+		}
         // Register for log events; the filter argument specifies the log level that
         // is printed to console as well as what is called back in onLog.
         if ( ![vc registerLogEventListener:self Filter:"warning info@VidyoClient info@LmiPortalSession info@LmiPortalMembership info@LmiResourceManagerUpdates info@LmiPace info@LmiIce"] ) {
@@ -398,10 +410,12 @@ enum VidyoConnectorState {
 
 // Refresh the UI
 - (void)refreshUI {
-    [logger Log:[NSString stringWithFormat:@"VidyoConnectorShowViewAt: x = %f, y = %f, w = %f, h = %f", videoView.frame.origin.x, videoView.frame.origin.y, videoView.frame.size.width, videoView.frame.size.height]];
+    [logger Log:[NSString stringWithFormat:@"VidyoConnectorShowViewAt: x = %f, y = %f, w = %f, h = %f", videoSelfView.frame.origin.x, videoSelfView.frame.origin.y, videoSelfView.frame.size.width, videoSelfView.frame.size.height]];
 
+	
+	[vc assignViewToLocalCamera:&videoSelfView LocalCamera:lastSelectedCamera DisplayCropped:false AllowZoom:true];
     // Resize the rendered video.
-    [vc showViewAt:&videoView X:0 Y:0 Width:videoView.frame.size.width Height:videoView.frame.size.height];
+    [vc showViewAt:&videoSelfView X:0 Y:0 Width:videoSelfView.frame.size.width Height:videoSelfView.frame.size.height];
 }
 
 // The state of the VidyoConnector connection changed, reconfigure the UI.
@@ -658,6 +672,82 @@ enum VidyoConnectorState {
 
 - (void)onLog:(VCLogRecord*)logRecord {
     [logger LogClientLib:logRecord.message];
+}
+
+-(void) onRemoteCameraAdded:(VCRemoteCamera *)remoteCamera Participant:(VCParticipant *)participant {
+	[logger Log:[NSString stringWithFormat:@"onRemoteCameraAdded: cameraName=%1$@ participantName=%2$@", [remoteCamera getName], [participant getName]]];
+	
+	// add remote participant to the list if not exist
+	VCRemoteCamera *rc = [remoteParties objectForKey:[participant getId]];
+	if (rc == nil) {
+		[remoteParties setObject:remoteCamera forKey:[participant getId]];
+	}
+	
+	// if this is first remote cam in a call, then show it in remote view
+	// update currCam
+	if (remoteParties.count == 1) {
+		[vc assignViewToRemoteCamera:&videoRemoteView RemoteCamera:remoteCamera DisplayCropped:false AllowZoom:true];
+		[vc showViewAt:&videoRemoteView X:0 Y:0 Width:videoRemoteView.frame.size.width Height:videoRemoteView.frame.size.height];
+		
+		currentRemoteCam = remoteCamera;
+	}
+	
+}
+
+-(void) onRemoteCameraRemoved:(VCRemoteCamera *)remoteCamera Participant:(VCParticipant *)participant {
+	[logger Log:[NSString stringWithFormat:@"onRemoteCameraRemoved: cameraName=%1$@ participantName=%2$@", [remoteCamera getName], [participant getName]]];
+	
+	// remove from remoteParties
+	[remoteParties removeObjectForKey:[participant getId]];
+	
+	// if removed camera is the same as current cam, then
+		// if there are other remote parties,
+			// assign view to first of them, reset currentCam
+		// else
+			// make self view full screen
+	if (currentRemoteCam != nil && [currentRemoteCam getId] == [remoteCamera getId]) {
+		if (remoteParties.count > 0) {
+			VCRemoteCamera *camToSet = [[remoteParties allValues] objectAtIndex:0];
+			[vc assignViewToRemoteCamera:&videoRemoteView RemoteCamera:camToSet DisplayCropped:false AllowZoom:true];
+			[vc showViewAt:&remoteCamera X:0 Y:0 Width:videoRemoteView.frame.size.width Height:videoRemoteView.frame.size.height];
+			currentRemoteCam = camToSet;
+		} else {
+			[vc hideView:&videoRemoteView];
+			// make self view full screen
+		}
+	}
+}
+
+-(void) onLoudestParticipantChanged:(VCParticipant *)participant AudioOnly:(BOOL)audioOnly {
+	[logger Log:[NSString stringWithFormat:@"onLoudestParticipantChanged: %@", [participant getName]]];
+	
+	if (!audioOnly) {
+		VCRemoteCamera *camToShow = [remoteParties objectForKey:[participant getId]];
+		if (camToShow != nil) {
+			[vc assignViewToRemoteCamera:&videoRemoteView RemoteCamera:camToShow DisplayCropped:false AllowZoom:true];
+			[vc showViewAt:&videoRemoteView X:0 Y:0 Width:videoRemoteView.frame.size.width Height:videoRemoteView.frame.size.height];
+			
+			currentRemoteCam = camToShow;
+		}
+	}
+}
+
+-(void) onRemoteCameraStateUpdated:(VCRemoteCamera *)remoteCamera Participant:(VCParticipant *)participant State:(VCDeviceState)state {
+	
+}
+
+-(void) onParticipantJoined:(VCParticipant *)participant {
+	[logger Log:[NSString stringWithFormat:@"onParticipantJoined: %@", [participant getName]]];
+}
+
+-(void) onParticipantLeft:(VCParticipant *)participant {
+	[logger Log:[NSString stringWithFormat:@"onParticipantLeft: %@", [participant getName]]];
+}
+
+
+
+-(void) onDynamicParticipantChanged:(NSMutableArray *)participants {
+	
 }
 
 @end
